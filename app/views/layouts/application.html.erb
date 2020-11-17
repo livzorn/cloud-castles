@@ -15,6 +15,26 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <div class="navbar">
+      <h1>cloud castles</h1>
+      <div class="navbar-links">
+        <a href="">explore stays</a>
+        <a href="">my bookings</a>
+        <img src="https://static.hollywoodreporter.com/sites/default/files/2019/03/avatar-publicity_still-h_2019-compressed.jpg" alt="user-avatar">
+      </div>
+    </div>
     <%= yield %>
+    <div class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <p>Cloud Castles, Inc.</p>
+          <p>1 Mountain Rd, Fancytown, Switzerland</p>
+        </div>
+        <div class="footer-section">
+          <p>+41 800 444 8484</p>
+          <p>info@cloudcastles.com</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
