@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get '/login', to: 'users#login'
+  resources :castles
+  resources :bookings, only: [ :index,  :new,  :create ]
 end
