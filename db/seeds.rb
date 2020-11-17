@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create(name: "Olivia", email: "olivia_zorn@zorn.com")
+user = User.create(email: "olivia_zorn@zorn.com", password: "lewagon")
 
 
 Castle.create(user: user, name: "Chateau Chamborigaud", description: "Luxury ancient Disney-style castle in the Cevennes Mountains. Surrounded by 5 acres of land – this chateau mixes a modern style with fine medieval character to great effect.", location: "Languedoc", price: 10000)
