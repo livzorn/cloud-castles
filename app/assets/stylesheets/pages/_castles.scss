@@ -1,0 +1,56 @@
+body {
+  background-color: #C5F1FF;
+  h2 {
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-family: Roboto;
+  margin-top: 25px;
+  }
+}
+
+.grid-castles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  padding: 50px 150px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  line-height: 0;
+  border-radius: 10px;
+  .castle-img {
+    height: 210px;
+    object-fit: cover;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
+
+.card { transition: all .2s ease-in-out; }
+.card:hover { transform: scale(1.05); }
+
+.castle-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.price {
+  padding-top: 16px;
+}
+
+
+@media(max-width: 992px) {
+  .grid-castles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .grid-castles {
+    grid-template-columns: 1fr;
+  }
+}
