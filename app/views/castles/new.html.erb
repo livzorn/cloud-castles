@@ -1,1 +1,8 @@
-<h1>New Castle</h1>
+
+<%= simple_form_for(@castle) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
