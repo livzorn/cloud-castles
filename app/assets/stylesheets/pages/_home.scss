@@ -36,3 +36,11 @@
   font-family: Righteous;
   position: absolute;
 }
+
+.btn-primary:hover {
+  opacity: 1;
+  background: #c5e5ff;
+  text-decoration: none;
+  color: black;
+  transition: .2s
+}
