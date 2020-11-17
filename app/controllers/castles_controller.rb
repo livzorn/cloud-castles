@@ -1,6 +1,6 @@
 class CastlesController < ApplicationController
   def index
-    @castles = Castle.new
+    @castles = Castle.all
   end
 
   def show
