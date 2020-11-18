@@ -22,7 +22,7 @@ class CastlesController < ApplicationController
 
   def edit
     @castle = Castle.find(params[:id])
-
+    # ***WE NEED TO FINISH THIS METHOD***
   end
 
   private
