@@ -17,7 +17,7 @@
     <% @castles.each_with_index do |castle, index| %>
       <%= link_to(castle_path(castle)) do %>
         <div class="card">
-          <%= image_tag "castle_#{index + 1}.jpeg", height: 210%>
+          <%= image_tag(asset_path("castle_#{index + 1}.jpeg"), height: 210)%>
 <!--           <img class="castle-img" src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="Eltz Castle">
  -->          <!-- <img src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="<%= castle.name %>"> -->
           <div class="castle-info">
