@@ -1,12 +1,12 @@
 <div class="container" style= "width: 800px;">
-  <div class="card-category" style= "margin-left: 110px;"><h1>Book your next luxury get away</h1></div>
+  <div class="card-category" style= "margin-left: 85px;"><h1>Book your next luxury get away</h1></div>
   <br>
   <div class="container" style="width: 350px;">
-    <p>When are you planning on going?</p>
     <%= simple_form_for(@booking) do |f| %>
       <%= f.input :check_in_date %>
       <%= f.input :check_out_date %>
-      <%= f.submit "check availability", class: "btn-primary"%>
+      <%= f.submit "check availability", class: "checkbutton"%>
     <% end %>
   </div>
+ <%= link_to 'browse castles', castles_path, class: "browsebutton" %>
 </div>
