@@ -28,6 +28,7 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "my castles", "#", class: "dropdown-item" %>
               <%= link_to "add a castle", "#", class: "dropdown-item" %>
+              <%= link_to "logout", destroy_user_session_path, method: :delete %>
             </div>
           </div>
         </div>
