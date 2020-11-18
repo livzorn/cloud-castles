@@ -19,12 +19,6 @@
   }
 }
 
-.castle_text {
-
-
-
-}
-
 .castle_images {
   width: 50%;
   margin: 16px;
@@ -75,4 +69,18 @@
 
 .buttons {
   margin: 32px;
+}
+
+.booking_btn:hover {
+  transition-property: padding;
+  transition-duration: 0.3s;
+  padding: 18px 28px;
+  color: white;
+}
+
+.back_btn:hover {
+  transition-property: font-size;
+  transition-duration: 0.3s;
+  font-size: 15px;
+  color: #C92661;
 }
