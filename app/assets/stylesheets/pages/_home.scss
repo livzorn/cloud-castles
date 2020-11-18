@@ -1,12 +1,12 @@
 // Specific CSS for your home-page
-.banner {
+.Homebanner {
   background-size: cover;
   object-fit: cover;
   background-position: center;
   padding: 195px 0;
   height: 500px
 }
-.banner h1 {
+.Homebanner h1 {
   color: white;
   text-shadow: 0px 0px 4px rgba(0,0,0,4);
   text-decoration: none;
@@ -17,14 +17,14 @@
   margin-top: 90px;
 }
 
-.banner p {
+.Homebanner p {
   color: white;
   line-height: 35px;
   letter-spacing: 0.1em;
   font-size: 19px;
   font-family: Roboto
 }
-.btn-primary {
+.CastleButton {
   display: inline-block;
   background-color: #C5F1FF;
   margin-top: -85px;
@@ -36,3 +36,12 @@
   font-family: Righteous;
   position: absolute;
 }
+
+.CastleButton {
+  opacity: 1;
+  background: #c5e5ff;
+  text-decoration: none;
+  color: black;
+  transition: .2s
+}
+

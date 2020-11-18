@@ -1,6 +1,6 @@
 class CastlesController < ApplicationController
   def index
-    @castles = Castle.new
+    @castles = Castle.all
   end
 
   def show
@@ -13,6 +13,7 @@ class CastlesController < ApplicationController
 
   def create
     @castle = Castle.new(castle_params)
+    @castle.user = current_user
     if @castle.save
       redirect_to castle_path(@castle)
     else
@@ -22,7 +23,7 @@ class CastlesController < ApplicationController
 
   def edit
     @castle = Castle.find(params[:id])
-    # ***WE NEED TO FINISH THIS METHOD***
+
   end
 
   private

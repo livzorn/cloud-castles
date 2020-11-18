@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   background: white;
-  padding: 16px;
+  padding: 10px;
   padding-left: 32px;
   img {
     border-radius: 100%;
@@ -11,39 +11,29 @@
     object-fit: cover;
     margin-right: 16px;
   }
-  h1 {
-    color: #3B528F
-  }
-  a {
-    color: #C92661;
-    margin-top: 10px;
-    font-size: 24px;
-  }
 }
 
-.navbar-links {
+.navbar-link {
+  color: #C92661;
+  margin-top: 10px;
+  font-size: 24px;
+  font-family: 'Righteous', sans-serif;
+  letter-spacing: 0.07em;
+}
+
+#site-title {
+    color: #3B528F;
+    font-family: 'Ribeye Marrow', cursive;
+    font-weight: lighter;
+    font-size: 40px;
+}
+
+.navbar-links-container {
   display: flex;
   width: 35vw;
   justify-content: space-between;
 }
 
-.footer {
-  color: white;
-  background-color: #C92661;
-  padding: 24px;
-  padding-top: 32px;
+.navbar .navbar-collapse {
+  flex-grow: 0;
 }
-
-.footer-container {
-  width: 700px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-}
-
-.footer-section {
-  text-align: center;
-  line-height: 5px;
-  padding: 16px, 100px;
-}
-

@@ -1,1 +1,40 @@
-<h1>Castles</h1>
+<h2 class="text-align-center">Browse castles near and far</h2>
+<div class="grid-castles">
+
+    <div class="card">
+      <img class="castle-img" src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="Eltz Castle">
+      <div class="castle-info">
+        <div class="castle-description">
+          <h3>Eltz Castle</h3>
+          <p>Wierschem, Germany</p>
+        </div>
+        <div class="price">
+          <p>$1,000/night</p>
+        </div>
+      </div>
+    </div>
+
+    <% @castles.each do |castle| %>
+      <%= link_to(castle_path(castle)) do %>
+        <div class="card">
+          <div class="castle-img">
+            <%= cl_image_tag castle.photo.key %>
+          </div>
+          <!-- <img src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="<%= castle.name %>"> -->
+          <div class="castle-info">
+            <div class="castle-description">
+              <h3><%= castle.name %></h3>
+              <p><%= castle.location %></p>
+            </div>
+            <div class="price">
+              <p><%= castle.price %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+</div>
+
+
+
