@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/login', to: 'users#login'
-  resources :castles
-  resources :bookings, only: [ :index,  :new,  :create ]
+  resources :castles do
+    resources :bookings, only: [ :new,  :create ]
+  end
+  resources :bookings, only: [:index]
 end
