@@ -25,9 +25,9 @@
     <p class="description">This magnificent château in the Loire Valley is known as “Petit Chambord”, for its resemblance to the royal palace in Loir-et-Cher. Built in 1854, it’s now the site of truly grand weddings, where guests stay in luxurious suites or beautiful rooms and can have daily meals prepared if you wish. Your on-site concierge, Cynthia, will welcome you warmly - ask her about arranging horseback rides or spa services (or both!)</p>
     <h4>€10,000/night</h4>
     <div class="buttons">
-      <%= link_to "Book Your Stay", castles_path, class: "booking_btn"%>
+      <%= link_to "Book Your Stay", new_castle_booking_path(@castle), class: "booking_btn"%>
       <br>
-      <%= link_to "back", new_castle_booking_path(@castle), class: "back_btn" %>
+      <%= link_to "back", castles_path, class: "back_btn" %>
     </div>
   </div>
 </div>
