@@ -30,8 +30,10 @@
 
 .navbar-links-container {
   display: flex;
-  width: 35vw;
-  justify-content: space-between;
+  justify-content: flex-end;
+  a{
+    margin: 10px 20px;
+  }
   a:hover {
     color: $lighter-pink;
     text-decoration: none;
@@ -54,3 +56,10 @@ a:hover {
   text-decoration: none;
 }
 
+.avatar {
+  margin: 5px 20px;
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
+}
