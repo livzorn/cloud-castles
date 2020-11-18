@@ -32,9 +32,27 @@
   font-family: Ribeye Marrow;
 
 }
-.container {
-  font-family:righteous;
+.container-bookings {
+  text-align: center;
+  width: 40vw;
+  background-color: white;
+  margin: 35px auto;
+  padding: 32px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  h3 {
+    font-family: Righteous;
+    margin-bottom: 16px;
+  }
+  p {
+    font-size: 20px;
+  }
 }
+
+.dates {
+  display: flex;
+  justify-content: space-between;
+}
+
 .browsebutton {
   display: inline-block;
   background-color: white;
@@ -46,5 +64,5 @@
   text-decoration: underline;
   font-family: Righteous;
   position: absolute;
- border-style: none
+  border-style: none
   }
