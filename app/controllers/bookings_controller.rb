@@ -4,13 +4,17 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @castle = Castle.find(params[:castle_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.castle = Castle.find(params[:castle_id])
+    @booking.user = current_user
+
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render 'new'
     end
