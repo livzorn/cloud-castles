@@ -29,12 +29,11 @@ class CastlesController < ApplicationController
 
   def edit
     @castle = Castle.find(params[:id])
-
   end
 
   private
-  def castle_params
-    params.require(:castle).permit(:name, :description, :location, :price)
-  end
 
+  def castle_params
+    params.require(:castle).permit(:name, :description, :location, :price, photos: [])
+  end
 end
