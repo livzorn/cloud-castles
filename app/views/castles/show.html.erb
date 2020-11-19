@@ -1,15 +1,27 @@
-<div class="d-flex castles_container">
-  <div class="castle_images">
-    <div class ="main_image">
-      <%= image_tag "cdj1.jpg" %>
-    </div>
-     <div class ="d-flex castle_small_images">
-      <%= image_tag(asset_path("cdj4.jpg")) %>
-      <%= image_tag(asset_path("cdj5.jpg"))%>
-      <%= image_tag(asset_path("cdj2.jpg"))%>
-    </div>
-  </div>
+<div class="d-flex castles-container">
 
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <% @castle.photos.size.times do |i| %>
+        <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>" class="<%= 'active' if i.zero? %>"></li>
+      <% end %>
+    </ol>
+    <div class="carousel-inner">
+      <% @castle.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item <%= 'active' if index.zero? %>">
+        <%= cl_image_tag photo.key, class: "d-block" %>
+      </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
   <div class="castle_text">
     <h2><%= @castle.name %></h2>

@@ -1,32 +1,43 @@
-.castles_container {
+.castles-container {
   width: 80vw;
   padding: 24px;
   background-color: white;
   margin: 25px auto;
 }
 
-.main_image img {
-  max-width: 38vw;
-  max-height: 100%;
-  margin-bottom: 16px;
-}
-
-.castle_small_images {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  justify-content: center;
+.carousel {
+  width: 38vw;
+  height: 50vh;
+  margin: 32px 16px;
   img {
-    max-width: 11.5vw;
+    max-height: 50vh;
+    width: 38vw;
     object-fit: cover;
-    justify-content: space-between;
   }
 }
 
-.castle_images {
-  width: 50%;
-  margin: 16px;
-}
+// .main_image img {
+//   max-width: 38vw;
+//   max-height: 100%;
+//   margin-bottom: 16px;
+// }
+
+// .castle_small_images {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+//   justify-content: center;
+//   img {
+//     max-width: 11.5vw;
+//     object-fit: cover;
+//     justify-content: space-between;
+//   }
+// }
+
+// .castle_images {
+//   width: 50%;
+//   margin: 16px;
+// }
 
 .castle_text {
   width: 50%;
@@ -52,13 +63,15 @@
 .description {
   text-align: justify;
   margin: 8px auto;
+  width: auto;
+  max-width: 30vw;
 }
 
 .price {
   margin: 16px auto 48px auto;
 }
 
-.booking_btn {
+.btn-book {
   background-color: $main-pink;
   color: white;
   font-family: 'Righteous', sans-serif;
