@@ -1,13 +1,24 @@
 <h2 class="text-align-center">Current Bookings</h2>
 <div class="container-bookings">
+  <% if @bookings.empty? %>
+    <div class="empty-bookings">
+      <p> You have no current bookings!</p>
+    </div>
+  <% else %>
     <% @bookings.each do |booking| %>
-      <h3><%= Castle.find(booking.castle_id).name %></h3>
+      <h3><%= link_to "#{booking.castle.name}", castle_path(booking.castle.id) %> </h3>
       <div class="dates">
         <p> Check-in: <%= booking.check_in_date %> </p>
         <p> Check-out: <%= booking.check_out_date %> </p>
+        <p> Booked for: <%= booking.user.email %> </p>
+         <%=link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="far fa-trash-alt"></i> </p>
+         <%end%>
       </div>
     <%end%>
+  <%end%>
 </div>
+
 
 
 
