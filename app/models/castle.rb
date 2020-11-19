@@ -5,4 +5,5 @@ class Castle < ApplicationRecord
   validates :description, presence: true
   validates :location, presence: true
   validates :price, presence: true
+  has_many_attached :photos
 end
