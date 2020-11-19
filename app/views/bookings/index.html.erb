@@ -18,6 +18,23 @@
     <%end%>
   <%end%>
 </div>
+<h2 class="text-align-center">My Castle Bookings</h2>
+<div class="container-bookings">
+  <% if @castles.nil? %>
+    <div class="empty-castle">
+      <p>You haven't listed any castles!</p>
+    </div>
+  <% else %>
+    <% @castles.each do |castle| %>
+      <p> <%= castle.name %></p>
+      <p> <%= castle.description %></p>
+      <p> <%= castle.location%></p>
+      <p> <%= castle.price%></p>
+      <p> <%= castle.photos%></p>
+    <% end %>
+  <% end %>
+</div>
+
 
 
 
