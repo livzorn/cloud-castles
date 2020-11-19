@@ -8,12 +8,12 @@
 }
 .Homebanner h1 {
   color: white;
-  text-shadow: 0px 0px 4px rgba(0,0,0,4);
+  text-shadow: 0px 0px 2px rgba(0,0,0,4);
   text-decoration: none;
   letter-spacing: 0.1em;
   line-height: 82px;
   font-size: 60px;
-  font-family: Roboto;
+  font-family: "Work Sans";
   margin-top: 90px;
 }
 
@@ -22,11 +22,12 @@
   line-height: 35px;
   letter-spacing: 0.1em;
   font-size: 19px;
-  font-family: Roboto
+  font-family: "Work Sans";
 }
 .CastleButton {
   display: inline-block;
   background-color: #C5F1FF;
+  font-size: 22px;
   margin-top: -85px;
   margin-left: 710px;
   padding: 16px 36px;
@@ -44,4 +45,3 @@
   color: black;
   transition: .2s
 }
-

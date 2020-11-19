@@ -1,5 +1,5 @@
 body {
-  background-color: #C5F1FF;
+  background-color: $lighter-blue;
   h2 {
   text-align: center;
   letter-spacing: 0.1em;
@@ -16,23 +16,27 @@ body {
   padding: 50px 150px;
 }
 
-.card {
+.card-castle {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  line-height: 0;
+  line-height: 5px;
   border-radius: 10px;
   .castle-img {
-    height: 210px;
+    max-width: 100%;
     object-fit: cover;
   }
   h3 {
     font-size: 20px;
     font-family: 'Righteous', sans-serif;
+    color: black;
+  }
+  p {
+    color: black;
   }
 }
 
-.card { transition: all .2s ease-in-out; }
-.card:hover { transform: scale(1.05); }
+.card-castle { transition: all .2s ease-in-out; }
+.card-castle:hover { transform: scale(1.05); }
 
 .castle-info {
   display: flex;
@@ -40,9 +44,9 @@ body {
   padding: 16px;
 }
 
-.price {
-  padding-top: 16px;
-}
+// .price {
+//   padding-top: 8px;
+// }
 
 .castle-info a {
   color: black;

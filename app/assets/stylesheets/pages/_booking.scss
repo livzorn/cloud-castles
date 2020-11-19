@@ -12,7 +12,7 @@
 
 }
 
-.checkbutton {
+.bookbutton {
   display: inline-block;
   background-color: white;
   padding: 10px 20px;
@@ -22,7 +22,7 @@
   text-decoration: underline;
   font-family: Righteous;
   position: absolute;
- border-style: none
+  border-style: none;
 }
 .card-category h1{
   display: inline-block;
@@ -32,19 +32,37 @@
   font-family: Ribeye Marrow;
 
 }
-.container {
-  font-family:righteous;
+.container-bookings {
+  text-align: center;
+  width: 40vw;
+  background-color: white;
+  margin: 35px auto;
+  padding: 32px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  h3 {
+    font-family: Righteous;
+    margin-bottom: 16px;
+  }
+  p {
+    font-size: 20px;
+  }
 }
+
+.dates {
+  display: flex;
+  justify-content: space-between;
+}
+
 .browsebutton {
   display: inline-block;
   background-color: white;
   padding: 10px 20px;
   border-radius: 50px;
   margin-top: 100px;
-  margin-left:225px;
+  margin-left:226px;
   color: black;
   text-decoration: underline;
   font-family: Righteous;
   position: absolute;
- border-style: none
+  border-style: none
   }

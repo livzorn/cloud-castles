@@ -1,0 +1,14 @@
+.btn-pink {
+  padding: 8px 24px;
+  border-radius: 22px;
+  color: white;
+  background-color: $main-pink;
+  border-style: none;
+}
+
+.btn-devise:hover {
+  transition-property: all;
+  transition-duration: 0.2s;
+  background-color: $lighter-pink;
+  color: white;
+}

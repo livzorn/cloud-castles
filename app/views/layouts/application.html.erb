@@ -21,13 +21,18 @@
         <%= link_to "cloud castles", root_path, id: "site-title" %>
         <div class="navbar-links-container">
           <%= link_to "explore stays", castles_path, class: "navbar-link" %>
-          <%= link_to "my bookings", bookings_path, class: "navbar-link" %>
+          <% user_signed_in? ? link = "my bookings" : link = "login" %>
+          <%= link_to link, bookings_path, class: "navbar-link" %>
           <div class="nav-item dropdown">
-            <!-- <img src="https://static.hollywoodreporter.com/sites/default/files/2019/03/avatar-publicity_still-h_2019-compressed.jpg" alt="user-avatar"> -->
             <%= image_tag "https://static.hollywoodreporter.com/sites/default/files/2019/03/avatar-publicity_still-h_2019-compressed.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "my castles", "#", class: "dropdown-item" %>
+              <% if user_signed_in? && Castle.find_by(user_id: current_user.id) %>
+                <%= link_to "my castles", "#", class: "dropdown-item" %>
+              <% end %>
               <%= link_to "add a castle", "#", class: "dropdown-item" %>
+              <% if user_signed_in? %>
+                <%= link_to "logout", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
+              <% end %>
             </div>
           </div>
         </div>
