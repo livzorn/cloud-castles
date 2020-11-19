@@ -1,9 +1,19 @@
+<h2 class="justify-content-center">Add a castle</h2>
 
-<%= simple_form_for(@castle) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-<% end %>
+<div class="add_castle">
+  <br>
+  <div class="container">
+    <%= simple_form_for(@castle) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :location, label: "Location" %>
+      <%= f.input :price %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Upload Photos" %>
+      <div class="book">
+        <%= f.submit  "add your castle", class: "btn-pink"%>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'back', root_path, class: "btn-back" %>
+  <!-- this needs to be moved as it's appearing in the footer! nq 19/11 -->
+</div>

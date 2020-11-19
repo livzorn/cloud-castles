@@ -29,7 +29,8 @@
               <% if user_signed_in? && Castle.find_by(user_id: current_user.id) %>
                 <%= link_to "my castles", "#", class: "dropdown-item" %>
               <% end %>
-              <%= link_to "add a castle", "#", class: "dropdown-item" %>
+              <%= link_to "add a castle", new_castle_path, class: "dropdown-item" %>
+              <!-- added link to add_castle page nq 19/11 -->
               <% if user_signed_in? %>
                 <%= link_to "logout", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
               <% end %>
