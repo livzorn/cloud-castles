@@ -1,16 +1,18 @@
-<div class="container" style= "width: 800px;">
-  <div class="card-category" style= "margin-left: 85px;"><h1>Book your next luxury get away</h1></div>
+<h2 class="justifty-content-center">Book your next luxury getaway</h2>
+<div class="container-book">
   <br>
-  <div class="container" style="width: 350px;">
+  <div class="container">
     <%= simple_form_for([@castle, @booking]) do |f| %>
       <%= f.input :check_in_date %>
       <%= f.input :check_out_date %>
-      <%= f.submit  "book your castle", class: "bookbutton"%>
+      <div class="book">
+        <%= f.submit  "book your castle", class: "btn-pink"%>
+      </div>
     <!--   link to bookings index# -->
     <% end %>
   </div>
 
- <%= link_to 'browse castles', castles_path, class: "browsebutton" %>
+ <%= link_to 'back', castles_path, class: "btn-back" %>
 </div>
 
 
