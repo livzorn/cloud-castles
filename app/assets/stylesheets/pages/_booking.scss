@@ -53,16 +53,9 @@
   justify-content: space-between;
 }
 
-.browsebutton {
-  display: inline-block;
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 50px;
-  margin-top: 100px;
-  margin-left:226px;
-  color: black;
-  text-decoration: underline;
-  font-family: Righteous;
-  position: absolute;
-  border-style: none
-  }
+.fa-trash-alt {
+  color: #C92661;
+  margin-top:6px;
+  margin-right: 3px;
+}
+
