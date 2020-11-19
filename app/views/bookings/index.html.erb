@@ -25,12 +25,22 @@
       <p>You haven't listed any castles!</p>
     </div>
   <% else %>
-    <% @castles.each do |castle| %>
-      <p> <%= castle.name %></p>
-      <p> <%= castle.description %></p>
-      <p> <%= castle.location%></p>
-      <p> <%= castle.price%></p>
-      <p> <%= castle.photos%></p>
+      <% @castles.each do |castle| %>
+        <div class = "container" >
+          <div class="castle-img">
+            <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
+          </div>
+          <div class="castle-info">
+            <div class="castle-description">
+              <h3><%= castle.name %></h3>
+              <p><%= castle.location %></p>
+            </div>
+            <div class="price">
+              <p>$<%= castle.price %></p>
+              <p>/night</p>
+            </div>
+          </div>
+        </div>
     <% end %>
   <% end %>
 </div>
