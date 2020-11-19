@@ -14,7 +14,7 @@
 }
 
 .navbar-link {
-  color: #C92661;
+  color: $main-pink;
   margin-top: 10px;
   font-size: 24px;
   font-family: 'Righteous', sans-serif;
@@ -22,7 +22,7 @@
 }
 
 #site-title {
-    color: #3B528F;
+    color: $title-blue;
     font-family: 'Ribeye Marrow', cursive;
     font-weight: lighter;
     font-size: 40px;
@@ -30,10 +30,36 @@
 
 .navbar-links-container {
   display: flex;
-  width: 35vw;
-  justify-content: space-between;
+  justify-content: flex-end;
+  a{
+    margin: 10px 20px;
+  }
+  a:hover {
+    color: $lighter-pink;
+    text-decoration: none;
+  }
 }
 
 .navbar .navbar-collapse {
   flex-grow: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#site-title:hover {
+  text-decoration: none;
+}
+
+.avatar {
+  margin: 5px 20px;
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
 }

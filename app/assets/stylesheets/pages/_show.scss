@@ -6,16 +6,20 @@
 }
 
 .main_image img {
-  max-width: 100%;
+  max-width: 38vw;
   max-height: 100%;
+  margin-bottom: 16px;
 }
 
 .castle_small_images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: center;
   img {
-    width: 150px;
-    height: 125px;
-    margin: 10px;
+    max-width: 11.5vw;
     object-fit: cover;
+    justify-content: space-between;
   }
 }
 
@@ -39,9 +43,9 @@
 }
 
 .rooms {
-  justify-content: center;
+  justify-content: space-around;
   p {
-    margin: 8px 32px;
+    margin-top: 8px;
   }
 }
 
@@ -50,8 +54,12 @@
   margin: 8px auto;
 }
 
+.price {
+  margin: 16px auto 48px auto;
+}
+
 .booking_btn {
-  background-color: #C92661;
+  background-color: $main-pink;
   color: white;
   font-family: 'Righteous', sans-serif;
   padding: 15px 25px;
@@ -59,8 +67,8 @@
   margin-top: 50px;
 }
 
-.back_btn {
-  color: #C92661;
+.btn-back {
+  color: $main-pink;
   font-family: 'Righteous', sans-serif;
   position: absolute;
   bottom: 16px;
@@ -71,16 +79,16 @@
   margin: 32px;
 }
 
-.booking_btn:hover {
+.btn-book:hover {
   transition-property: padding;
   transition-duration: 0.3s;
   padding: 18px 28px;
   color: white;
 }
 
-.back_btn:hover {
+.btn-book:hover {
   transition-property: font-size;
   transition-duration: 0.3s;
   font-size: 15px;
-  color: #C92661;
+  color: $main-pink;
 }
