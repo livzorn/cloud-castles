@@ -18,30 +18,10 @@ body {
   padding: 35px 150px 50px;
 }
 
-.card-castle {
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  line-height: 5px;
-  border-radius: 10px;
-  position: relative;
-  .castle-img {
-    max-width: 100%;
-    object-fit: cover;
-  }
-  h3 {
-    font-size: 20px;
-    font-family: 'Righteous', sans-serif;
-    color: black;
-  }
-  p {
-    color: black;
-  }
-}
-
 .castle-info {
   display: flex;
   justify-content: space-between;
-  margin: 16px 16px 0 16px;
+  margin: 16px 16px 32px 16px;
   padding-bottom: 12px;
   a {
   color: black;
@@ -59,10 +39,6 @@ body {
 .night {
   text-align: right;
   font-size: 14px;
-}
-
-.my-castles-buttons {
-  margin-top: 32px;
 }
 
 .card-castle { transition: all .2s ease-in-out; }
