@@ -1,13 +1,13 @@
-<h2 class="text-align-center" style="text-decoration: underline;font-family: Ribeye Marrow; color: black ">My Upcoming Castle Commutes</h2>
+<h2 class="text-align-center">My Upcoming Castle Commutes</h2>
 <div class="container-bookings">
 <!--    <div class="card-bookedcastle"> -->
-    <% if @bookings.empty? %>
-      <div class="empty-bookings">
-        <p> You have no current bookings!</p>
-      </div>
-    <% else %>
-      <% @bookings.each do |booking| %>
-       <div class="card-bookedcastle">
+  <% if @bookings.empty? %>
+    <div class="empty-bookings">
+      <p> You have no current bookings!</p>
+    </div>
+  <% else %>
+    <% @bookings.each do |booking| %>
+      <div class="card-bookedcastle">
         <div class="castle-img">
           <%= cl_image_tag booking.castle.photos.first.key, crop: :fill, height: 240, width: 350 if booking.castle.photos.attached? %>
         </div>
@@ -16,16 +16,16 @@
           <p> Check-in: <%= booking.check_in_date %> </p>
           <p> Check-out: <%= booking.check_out_date %> </p>
           <p> Booked for: <%= booking.user.email %> </p>
-           <%=link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="far fa-trash-alt"></i> </p>
-           <%end%>
         </div>
-       </div>
-      <%end%>
-    <%end%>
+        <%=link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="far fa-trash-alt"></i> </p>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
 
- <h2 class="text-center m-3 mt-3"style="text-decoration: underline;font-family: Ribeye Marrow; color: black">My Castle Bookings </h2>
+ <h2 class="text-center m-3 mt-5">Who's booked my castle?</h2>
  <div class="container-bookings">
    <div class="card-bookedcastle">
     <% if @castles.empty? %>
