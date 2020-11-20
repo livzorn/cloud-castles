@@ -18,9 +18,11 @@
               <p>/night</p>
             </div>
             <div class="buttons">
-              <%= link_to "Edit", edit_castle_path(castle), class: "btn-edit"%>
+              <%= link_to "Bookings", my_castle_bookings_castles_path(castle), class: "btn-bookings" %>
             <br>
-              <%= link_to "Delete", method: :delete, data: { confirm: "Are you sure?"} do %>
+              <%= link_to "Edit", edit_castle_path(castle), class: "btn-edit" %>
+            <br>
+              <%= link_to "Delete", class: "btn-delete-castle", method: :delete, data: { confirm: "Are you sure?"} do %>
                 <i class="fa fa-trash destroy_dose"></i>
               <% end %>
             </div>
@@ -30,7 +32,3 @@
     <% end %>
 
 </div>
-
-
-
-
