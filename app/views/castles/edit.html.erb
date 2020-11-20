@@ -1,1 +1,21 @@
-<h1>Edit Castle</h1>
+<h2 class="justify-content-center">Edit your castle</h2>
+
+<div class="add_castle">
+  <br>
+  <div class="container">
+    <%= simple_form_for(@castle) do |f| %>
+      <%= f.input :name, label: "Name" %>
+      <%= f.input :description, label: "Description" %>
+      <%= f.input :location, label: "Location" %>
+      <%= f.input :price, label: "Price per night" %>
+      <%= f.input :sleeps, label: "How many people does it sleep?" %>
+      <%= f.input :bedrooms, label: "Number of bedrooms" %>
+      <%= f.input :bathrooms, label: "Number of bathrooms" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Upload Photos" %>
+      <div class="book">
+        <%= f.submit  "Save changes", class: "btn-pink"%>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'back', root_path, class: "btn-back" %>
+</div>

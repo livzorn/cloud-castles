@@ -32,7 +32,22 @@ class CastlesController < ApplicationController
   end
 
   def edit
-    # method to be written!
+    @castle = Castle.find(params[:id])
+  end
+
+  def update
+    @castle = Castle.find(params[:id])
+    if @castle.update(castle_params)
+      redirect_to castle_path(@castle)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @castle = Castle.find(params[:id])
+    @castle.destroy
+    redirect_to castle_path(@castles)
   end
 
   private
