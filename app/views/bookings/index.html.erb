@@ -11,7 +11,7 @@
         <div class="castle-img">
           <%= cl_image_tag booking.castle.photos.first.key, crop: :fill, height: 240, width: 350 if booking.castle.photos.attached? %>
         </div>
-        <h3 style="color:black;"><%= link_to "#{booking.castle.name}", castle_path(booking.castle.id) %> </h3>
+        <h3 id="castle-title-bookings"><%= link_to "#{booking.castle.name}", castle_path(booking.castle.id) %> </h3>
         <div class="dates">
           <p> Check-in: <%= booking.check_in_date %> </p>
           <p> Check-out: <%= booking.check_out_date %> </p>
@@ -20,6 +20,41 @@
         <%=link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
           <i class="far fa-trash-alt"></i> </p>
         <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<h2 class="text-center m-3 mt-3">My Castle Bookings </h2>
+<div class="container-bookings">
+   <!-- <div class="card-bookedcastle"> -->
+  <% if @castles.empty? %>
+    <div class="castle-info">
+      <p class="text-center py-3">You don't have any castles!</p>
+    </div>
+  <% else %>
+    <% @castles.each do |castle| %>
+      <div class="card-bookedcastle">
+        <%= link_to(castle_path(castle)) do %>
+          <div class="castle-img">
+            <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
+          </div>
+        <% end %>
+        <h3 id="brand-color" class="text-center mt-3" style="font-family: righteous;"> <%= castle.name %></h3>
+        <% if castle.bookings.empty? %>
+          <p class="text-center py-3 my-booking"><em>Seems like no one is interested in this castle: you have 0 bookings😢</em></p>
+        <% else %>
+          <div class="container">
+            <% castle.bookings.each do |booking| %>
+              <div class="my-booking">
+                 <p> Your castle has been booked by:</p>
+                 <p><i id="email" class="far fa-envelope"></i> <%= booking.user.email %></p>
+                 <p><i id="email" class="far fa-calendar-alt"></i> <%= booking.check_in_date %> -</p>
+                 <p><i id="email" class="far fa-calendar-alt"></i> <%= booking.check_out_date %> </p>
+              </div>
+            <%end%>
+          </div>
+        <%end%>
       </div>
     <% end %>
   <% end %>
