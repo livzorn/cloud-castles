@@ -26,7 +26,7 @@
 }
 .CastleButton {
   // display: inline-block;
-  background-color: #c5e5ff;
+  background-color: #BAE0FF;
   font-size: 22px;
   // margin-top: -85px;
   // margin-left: 710px;
@@ -40,10 +40,12 @@
 
 .CastleButton:hover {
   opacity: 1;
-  background: #c5e5ff;
+  // background: #BAE0FF;
+  box-shadow: rgba(255, 255, 255, 0.85) 0px 2px 6px;
   text-decoration: none;
   color: black;
-  transition: .2s
+  transition-property: all;
+  transition-duration: .3s
 }
 
 .container-home {
