@@ -1,0 +1,8 @@
+<h2 class="text-align-center">Bookings for <%= @castle.name %> </h2>
+<% @bookings.each do |booking| %>
+  <%= booking.user.email %>
+  <br>
+  <%= booking.check_in_date %>
+  <br>
+  <%= booking.check_out_date %>
+<% end %>

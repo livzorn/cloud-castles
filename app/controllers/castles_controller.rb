@@ -36,6 +36,11 @@ class CastlesController < ApplicationController
     @castles = Castle.where(:user_id => current_user.id)
   end
 
+  def my_castle_bookings
+    @castle = Castle.find(params[:id])
+    @bookings = @castle.bookings
+  end
+
   def edit
     @castle = Castle.find(params[:id])
   end
