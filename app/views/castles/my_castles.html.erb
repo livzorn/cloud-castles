@@ -1,0 +1,33 @@
+<h2 class="text-align-center">Your castles</h2>
+<div class="grid-castles">
+
+    <% @castles.each do |castle| %>
+      <%= link_to(castle_path(castle)) do %>
+        <div class="card-castle">
+          <div class="castle-img">
+            <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
+          </div>
+
+          <div class="castle-info">
+            <div class="castle-description">
+              <h3><%= castle.name %></h3>
+              <p><%= castle.location %></p>
+            </div>
+            <div class="price">
+              <p>$<%= castle.price %></p>
+              <p>/night</p>
+            </div>
+            <div class="buttons">
+              <%= link_to "Edit details", edit_castle_path(@castles), class: "btn-edit"%>
+            <br>
+              <%= link_to "back", root_path, class: "btn-back" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+</div>
+
+
+

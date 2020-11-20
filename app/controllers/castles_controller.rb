@@ -27,8 +27,12 @@ class CastlesController < ApplicationController
     end
   end
 
+  def my_castles
+    @castles = Castle.where(:user_id => current_user.id)
+  end
+
   def edit
-    @castle = Castle.find(params[:id])
+    # method to be written!
   end
 
   private

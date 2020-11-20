@@ -21,6 +21,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
   line-height: 5px;
   border-radius: 10px;
+  position: relative;
   .castle-img {
     max-width: 100%;
     object-fit: cover;
@@ -38,6 +39,7 @@ body {
 .card-castle { transition: all .2s ease-in-out; }
 .card-castle:hover { transform: scale(1.05); }
 
+
 .castle-info {
   display: flex;
   justify-content: space-between;
@@ -51,7 +53,6 @@ body {
 .castle-info a {
   color: black;
 }
-
 
 @media(max-width: 992px) {
   .grid-castles {

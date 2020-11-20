@@ -14,7 +14,7 @@
       </div>
     </div> -->
 
-    <% @castles.each do |castle| %>
+    <% @castles.where.not(:user_id => current_user.id).each do |castle| %>
       <%= link_to(castle_path(castle)) do %>
         <div class="card-castle">
           <div class="castle-img">
