@@ -42,23 +42,23 @@ body {
   text-align: right;
 }
 
-.card-castle { transition: all .2s ease-in-out; }
-.card-castle:hover { transform: scale(1.05); }
-
-
 .castle-info {
   display: flex;
   justify-content: space-around;
-  padding: 16px;
-}
-
-.price p {
-  font-size: 18px;
-}
-
-.castle-info a {
+  margin-top: 16px;
+  padding-bottom: 12px;
+  a {
   color: black;
+  }
 }
+
+.price-card p {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.card-castle { transition: all .2s ease-in-out; }
+.card-castle:hover { transform: scale(1.05); }
 
 @media(max-width: 992px) {
   .grid-castles {
