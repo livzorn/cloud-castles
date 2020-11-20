@@ -1,5 +1,5 @@
 <h2 class="text-align-center">Your castles</h2>
-<div class="grid-castles">
+<div class="grid-castles my-castles-container">
 
   <% @castles.where(:user_id => current_user.id).each do |castle| %>
 
