@@ -18,30 +18,14 @@ body {
   padding: 35px 150px 50px;
 }
 
-.card-castle {
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  line-height: 5px;
-  border-radius: 10px;
-  position: relative;
-  .castle-img {
-    max-width: 100%;
-    object-fit: cover;
-  }
-  h3 {
-    font-size: 20px;
-    font-family: 'Righteous', sans-serif;
-    color: black;
-  }
-  p {
-    color: black;
-  }
+.my-castles-container {
+  padding-bottom: 120px;
 }
 
 .castle-info {
   display: flex;
-  justify-content: space-around;
-  margin-top: 16px;
+  justify-content: space-between;
+  margin: 16px 16px 32px 16px;
   padding-bottom: 12px;
   a {
   color: black;

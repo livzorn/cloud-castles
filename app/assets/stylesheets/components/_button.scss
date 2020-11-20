@@ -17,9 +17,10 @@
   color: $main-pink;
   font-family: 'Righteous', sans-serif;
   position: absolute;
-  bottom: 16px;
+  bottom: 24px;
   left: 32px;
 }
+
 
 .btn-edit {
   color: $main-pink;
@@ -35,4 +36,44 @@
   position: right;
   bottom: 16px;
   left: 32px;
+
+.btn-delete {
+  position: absolute;
+  bottom: 20px;
+  right: 32px;
+}
+
+.btn-book {
+  background-color: $main-pink;
+  color: white;
+  font-family: 'Righteous', sans-serif;
+  padding: 15px 25px;
+  border-radius: 40px;
+  margin-top: 50px;
+}
+
+.btn-back {
+  color: $main-pink;
+  font-family: 'Righteous', sans-serif;
+  position: absolute;
+  bottom: 16px;
+  right: 32px;
+}
+
+.buttons {
+  margin: 32px;
+}
+
+.btn-book:hover {
+  transition-property: padding;
+  transition-duration: 0.3s;
+  padding: 18px 28px;
+  color: white;
+}
+
+.btn-book:hover {
+  transition-property: font-size;
+  transition-duration: 0.3s;
+  font-size: 15px;
+  color: $main-pink;
 }
