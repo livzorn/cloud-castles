@@ -18,15 +18,14 @@
   font-family: 'Righteous', sans-serif;
   position: absolute;
   bottom: 24px;
-  left: 32px;
+  right: 145px;
 }
-
 
 .btn-edit {
   color: $main-pink;
   font-family: 'Righteous', sans-serif;
-  position: center;
-  bottom: 16px;
+  position: absolute;
+  bottom: 24px;
   left: 32px;
 }
 
@@ -36,6 +35,7 @@
   position: right;
   bottom: 16px;
   left: 32px;
+}
 
 .btn-delete {
   position: absolute;
