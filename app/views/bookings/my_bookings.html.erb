@@ -1,0 +1,35 @@
+my_bookings.html.erb
+<h2 class="text-center m-3 mt-5">Who's booked my castle?</h2>
+ <div class="container-bookings">
+   <div class="card-bookedcastle">
+    <% if @castles.empty? %>
+      <div class="castle-info">
+        <p class="text-center py-3">You don't have any castles!</p>
+      </div>
+    <% else %>
+     <% @castles.each do |castle| %>
+      <div class="card-bookedcastle">
+       <%= link_to(castle_path(castle)) do %>
+        <div class="castle-img">
+          <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
+        </div>
+        <h3 id="brand-color" class="text-center mt-3" style="font-family: righteous;"> <%= castle.name %>: Bookings</h3>
+        <% if castle.bookings.empty? %>
+          <p class="text-center py-3 my-booking"><em>Seems like no one is interested in this castle: you have 0 bookings😢</em></p>
+        <% else %>
+        <div class="container">
+            <% castle.bookings.each do |booking| %>
+            <div class="my-booking">
+               <p> Your castle has been booked by: <i id="email" class="far fa-envelope"></i> <%= booking.user.email %></p>
+               <p><i id="email" class="far fa-calendar-alt"></i> <%= booking.check_in_date %> -</p>
+               <p> <i id="email" class="far fa-calendar-alt"></i> <%= booking.check_out_date %> </p>
+            </div>
+          <%end%>
+        <%end%>
+        </div>
+       <%end%>
+      </div>
+     <%end%>
+    <%end%>
+   </div>
+  </div>
