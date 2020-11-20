@@ -25,6 +25,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to bookings_path
   end
+
   private
   def booking_params
     params.require(:booking).permit(:check_in_date, :check_out_date)
