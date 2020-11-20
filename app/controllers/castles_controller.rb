@@ -1,6 +1,12 @@
 class CastlesController < ApplicationController
   def index
     @castles = Castle.all
+    @markers = @castles.geocoded.map do |castle|
+      {
+        lat: castle.latitude,
+        lng: castle.longitude
+      }
+    end
   end
 
   def show
@@ -32,6 +38,6 @@ class CastlesController < ApplicationController
   private
 
   def castle_params
-    params.require(:castle).permit(:name, :description, :location, :price, photos: [])
+    params.require(:castle).permit(:name, :description, :location, :price, :sleeps, :bedrooms, :bathrooms, photos: [])
   end
 end
