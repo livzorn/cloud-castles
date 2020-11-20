@@ -14,44 +14,32 @@
 </div>
 <div class="grid-castles">
 
+  <% @castles.where.not(:user_id => current_user.id).each do |castle| %>
+    <%= link_to(castle_path(castle)) do %>
 
-    <!-- <div class="card">
-      <img class="castle-img" src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="Eltz Castle">
-      <div class="castle-info">
-        <div class="castle-description">
-          <h3>Eltz Castle</h3>
-          <p>Wierschem, Germany</p>
+      <div class="card-castle">
+
+        <div class="castle-img">
+          <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
         </div>
-        <div class="price">
-          <p>$1,000/night</p>
+
+        <div class="castle-info">
+          <div class="castle-description">
+            <h3><%= castle.name %></h3>
+            <p><%= castle.location %></p>
+          </div>
+          <div class="price-card">
+            <p class="money">€<%= castle.price %></p>
+            <p class="night">/night</p>
+          </div>
         </div>
+
       </div>
-    </div> -->
 
-    <% @castles.each do |castle| %>
-      <%= link_to(castle_path(castle)) do %>
-        <div class="card-castle">
-          <div class="castle-img">
-            <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
-          </div>
-<!--           <img class="castle-img" src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="Eltz Castle">
- -->          <!-- <img src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="<%= castle.name %>"> -->
-          <div class="castle-info">
-            <div class="castle-description">
-              <h3><%= castle.name %></h3>
-              <p><%= castle.location %></p>
-            </div>
-            <div class="price">
-              <p>$<%= castle.price %></p>
-              <p>/night</p>
-            </div>
-          </div>
-        </div>
-      <% end %>
     <% end %>
-
-
+  <% end %>
 </div>
+
 <div id="map"
      style="width: 110%; height: 320px;"
      data-markers="<%= @markers.to_json %>"

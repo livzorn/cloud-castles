@@ -3,8 +3,8 @@
   background-size: cover;
   object-fit: cover;
   background-position: center;
-  padding: 195px 0;
-  height: 500px
+  padding: 200px 0;
+  height: 90vh;
 }
 .Homebanner h1 {
   color: white;
@@ -14,7 +14,7 @@
   line-height: 82px;
   font-size: 60px;
   font-family: "Work Sans";
-  margin-top: 90px;
+  // margin-top: 90px;
 }
 
 .Homebanner p {
@@ -25,23 +25,36 @@
   font-family: "Work Sans";
 }
 .CastleButton {
-  display: inline-block;
-  background-color: #C5F1FF;
+  // display: inline-block;
+  background-color: #BAE0FF;
   font-size: 22px;
-  margin-top: -85px;
-  margin-left: 710px;
+  // margin-top: -85px;
+  // margin-left: 710px;
   padding: 16px 36px;
   border-radius: 50px;
   color: black;
-  text-decoration: underline;
+  text-decoration: none;
   font-family: Righteous;
-  position: absolute;
+  // position: absolute;
 }
 
-.CastleButton {
+.CastleButton:hover {
   opacity: 1;
-  background: #c5e5ff;
+  // background: #BAE0FF;
+  box-shadow: rgba(255, 255, 255, 0.85) 0px 2px 6px;
   text-decoration: none;
   color: black;
-  transition: .2s
+  transition-property: all;
+  transition-duration: .3s
 }
+
+.container-home {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 150px;
+}
+
+.find-button {
+  margin: 50px 100px 0 0;
+}
+

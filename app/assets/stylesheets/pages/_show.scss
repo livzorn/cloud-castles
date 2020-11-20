@@ -1,94 +1,47 @@
-.castles_container {
+.castles-container {
   width: 80vw;
-  padding: 24px;
+  padding: 16px;
   background-color: white;
-  margin: 25px auto;
+  margin: 50px auto;
 }
 
-.main_image img {
-  max-width: 38vw;
-  max-height: 100%;
-  margin-bottom: 16px;
-}
-
-.castle_small_images {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  justify-content: center;
+.carousel {
+  width: 45%;
+  margin: 32px 0 32px 32px;
   img {
-    max-width: 11.5vw;
+    height: 50vh;
+    width: 38vw;
     object-fit: cover;
-    justify-content: space-between;
   }
-}
-
-.castle_images {
-  width: 50%;
-  margin: 16px;
 }
 
 .castle_text {
   width: 50%;
-  margin: 16px;
   text-align: center;
   position: relative;
+  margin: 0 0 16px 16px;
 }
 
 .location-rating {
   justify-content: center;
   p {
-    margin: 8px 32px;
+    margin: 4px 32px;
   }
 }
 
 .rooms {
   justify-content: space-around;
-  p {
-    margin-top: 8px;
-  }
 }
 
 .description {
   text-align: justify;
   margin: 8px auto;
+  width: auto;
+  max-width: 30vw;
 }
 
 .price {
-  margin: 16px auto 48px auto;
+  margin: 16px auto 32px auto;
+  font-size: 22px;
 }
 
-.booking_btn {
-  background-color: $main-pink;
-  color: white;
-  font-family: 'Righteous', sans-serif;
-  padding: 15px 25px;
-  border-radius: 40px;
-  margin-top: 50px;
-}
-
-.btn-back {
-  color: $main-pink;
-  font-family: 'Righteous', sans-serif;
-  position: absolute;
-  bottom: 16px;
-  right: 32px;
-}
-
-.buttons {
-  margin: 32px;
-}
-
-.btn-book:hover {
-  transition-property: padding;
-  transition-duration: 0.3s;
-  padding: 18px 28px;
-  color: white;
-}
-
-.btn-book:hover {
-  transition-property: font-size;
-  transition-duration: 0.3s;
-  font-size: 15px;
-  color: $main-pink;
-}

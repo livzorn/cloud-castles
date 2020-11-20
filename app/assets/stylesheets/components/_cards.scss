@@ -1,1 +1,19 @@
-.card-category
+.card-castle {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  line-height: 5px;
+  border-radius: 10px;
+  position: relative;
+  .castle-img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+  h3 {
+    font-size: 20px;
+    font-family: 'Righteous', sans-serif;
+    color: black;
+  }
+  p {
+    color: black;
+  }
+}

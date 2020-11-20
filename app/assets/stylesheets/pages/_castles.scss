@@ -3,9 +3,11 @@ body {
   h2 {
   text-align: center;
   letter-spacing: 0.1em;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-weight: 300;
-  margin-top: 35px;
+  margin-top: 50px;
+  font-size: 26px;
+  transform: scale(1.1, 1);
   }
 }
 
@@ -13,45 +15,34 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
-  padding: 50px 150px;
+  padding: 35px 150px 50px;
 }
-
-.card-castle {
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  line-height: 5px;
-  border-radius: 10px;
-  .castle-img {
-    max-width: 100%;
-    object-fit: cover;
-  }
-  h3 {
-    font-size: 20px;
-    font-family: 'Righteous', sans-serif;
-    color: black;
-  }
-  p {
-    color: black;
-  }
-}
-
-.card-castle { transition: all .2s ease-in-out; }
-.card-castle:hover { transform: scale(1.05); }
 
 .castle-info {
   display: flex;
   justify-content: space-between;
-  padding: 16px;
-}
-
-// .price {
-//   padding-top: 8px;
-// }
-
-.castle-info a {
+  margin: 16px 16px 32px 16px;
+  padding-bottom: 12px;
+  a {
   color: black;
+  }
 }
 
+.price-card {
+  margin-top: 8px;
+}
+
+.money {
+  font-size: 18px;
+}
+
+.night {
+  text-align: right;
+  font-size: 14px;
+}
+
+.card-castle { transition: all .2s ease-in-out; }
+.card-castle:hover { transform: scale(1.05); }
 
 @media(max-width: 992px) {
   .grid-castles {

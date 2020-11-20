@@ -32,13 +32,32 @@ class CastlesController < ApplicationController
     end
   end
 
+  def my_castles
+    @castles = Castle.where(:user_id => current_user.id)
+  end
+
   def edit
     @castle = Castle.find(params[:id])
+  end
+
+  def update
+    @castle = Castle.find(params[:id])
+    if @castle.update(castle_params)
+      redirect_to castle_path(@castle)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @castle = Castle.find(params[:id])
+    @castle.destroy
+    redirect_to castle_path(@castles)
   end
 
   private
 
   def castle_params
-    params.require(:castle).permit(:name, :description, :location, :price, photos: [])
+    params.require(:castle).permit(:name, :description, :location, :price, :sleeps, :bedrooms, :bathrooms, photos: [])
   end
 end
