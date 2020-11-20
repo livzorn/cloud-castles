@@ -1,33 +1,33 @@
 <h2 class="text-align-center">Your castles</h2>
 <div class="grid-castles">
 
-    <% @castles.each do |castle| %>
-      <%= link_to(castle_path(castle)) do %>
-        <div class="card-castle">
-          <div class="castle-img">
-            <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
-          </div>
+  <% @castles.where(:user_id => current_user.id).each do |castle| %>
+    <%= link_to(castle_path(castle)) do %>
+      <div class="card-castle">
+        <div class="castle-img">
+          <%= cl_image_tag castle.photos.first.key,  crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
+        </div>
 
-          <div class="castle-info">
-            <div class="castle-description">
-              <h3><%= castle.name %></h3>
-              <p><%= castle.location %></p>
-            </div>
-            <div class="price">
-              <p>$<%= castle.price %></p>
-              <p>/night</p>
-            </div>
-            <div class="buttons">
-              <%= link_to "Edit", edit_castle_path(castle), class: "btn-edit"%>
-            <br>
-              <%= link_to "Delete", method: :delete, data: { confirm: "Are you sure?"} do %>
-                <i class="fa fa-trash destroy_dose"></i>
-              <% end %>
-            </div>
+        <div class="castle-info">
+          <div class="castle-description">
+            <h3><%= castle.name %></h3>
+            <p><%= castle.location %></p>
+          </div>
+          <div class="price-card">
+            <p class="money">€<%= castle.price %></p>
+            <p class="night">/night</p>
           </div>
         </div>
-      <% end %>
+        <div class="my-castles-buttons">
+            <%= link_to "Edit", edit_castle_path(castle), class: "btn-edit"%>
+          <br>
+            <%= link_to "Delete", method: :delete, data: { confirm: "Are you sure?"} do %>
+              <i class="fa fa-trash destroy_dose btn-delete" style="color:#C92661;"></i>
+            <% end %>
+        </div>
+      </div>
     <% end %>
+  <% end %>
 
 </div>
 
