@@ -48,9 +48,11 @@
 
 .container-home {
   display: flex;
+  justify-content: space-around;
+  margin-top: 150px;
 }
 
-.home-headings {
-
+.find-button {
+  margin: 50px 100px 0 0;
 }
 
