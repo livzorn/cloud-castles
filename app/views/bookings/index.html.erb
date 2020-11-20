@@ -7,41 +7,47 @@
   <% else %>
     <% @bookings.each do |booking| %>
       <h3><%= link_to "#{booking.castle.name}", castle_path(booking.castle.id) %> </h3>
-      <div class="dates">
-        <p> Check-in: <%= booking.check_in_date %> </p>
-        <p> Check-out: <%= booking.check_out_date %> </p>
-        <p> Booked for: <%= booking.user.email %> </p>
-         <%=link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="far fa-trash-alt"></i> </p>
-         <%end%>
+      <div class = "card", style="margin-top: 20px">
+        <div class="castle-img">
+        </div>
+        <div class="dates">
+          <p> Check-in: <%= booking.check_in_date %> </p>
+          <p> Check-out: <%= booking.check_out_date %> </p>
+          <p> Booked for: <%= booking.user.email %> </p>
+           <%=link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="far fa-trash-alt"></i> </p>
+           <%end%>
+        </div>
       </div>
-    <%end%>
+      <%end%>
   <%end%>
 </div>
-<h2 class="text-align-center">My Castle Bookings</h2>
-<div class="container-bookings">
+<h2 class="text-align-center">My Castle bookings</h2>
+<div  class="grid-castles" style="margin: 0px 0px 0px">
   <% if @castles.nil? %>
     <div class="empty-castle">
-      <p>You haven't listed any castles!</p>
+      <p>No one has booked your castle!</p>
     </div>
   <% else %>
       <% @castles.each do |castle| %>
-        <div class = "container" >
-          <div class="castle-img">
-            <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
-          </div>
-          <div class="castle-info">
-            <div class="castle-description">
-              <h3><%= castle.name %></h3>
-              <p><%= castle.location %></p>
+         <%= link_to(castle_path(castle)) do %>
+          <div class = "card-castle", style="margin-top: 20px">
+            <div class="castle-img">
+              <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
             </div>
-            <div class="price">
-              <p>$<%= castle.price %></p>
-              <p>/night</p>
+            <div class="castle-info">
+              <div class="castle-description">
+                <h3><%= castle.name %></h3>
+                <p><%= castle.location %></p>
+              </div>
+              <div class="price">
+                <p>$<%= castle.price %></p>
+                <p>/night</p>
+              </div>
             </div>
           </div>
-        </div>
-    <% end %>
+        <%end%>
+      <% end %>
   <% end %>
 </div>
 
