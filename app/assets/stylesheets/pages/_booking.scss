@@ -46,6 +46,10 @@
   }
   p {
     font-size: 20px;
+    font-family: "Work Sans";
+  }
+  a {
+    color: black;
   }
 }
 
@@ -66,6 +70,11 @@
   p {
     color: black;
   }
+
+#castle-title-bookings {
+  color: black;
+}
+
 .card-bookedcastle { transition: all .2s ease-in-out; }
 .card-bookedcastle:hover { transform: scale(1.05); }
 
@@ -75,20 +84,26 @@
     object-fit: cover;
     padding:25px 25px 25px;
   }
-
-
-
 }
-.dates {
-  display: flex;
-  justify-content: space-between;
+
+.dates p {
+  font-size: 18px;
+  margin: 0 auto;
 }
 
 .fa-trash-alt {
   color: #C92661;
   size: 400px ;
-  margin-top:6px;
+  margin: 16px auto 24px;
   margin-right: 5px;
   padding-right: 20px;
+}
+
+.my-booking {
+  padding: 16px;
+  padding-bottom: 32px;
+  p {
+  margin: 0 auto;
+  }
 }
 
