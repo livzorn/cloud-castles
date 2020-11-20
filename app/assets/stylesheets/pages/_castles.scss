@@ -3,9 +3,11 @@ body {
   h2 {
   text-align: center;
   letter-spacing: 0.1em;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-weight: 300;
-  margin-top: 35px;
+  margin-top: 50px;
+  font-size: 26px;
+  transform: scale(1.1, 1);
   }
 }
 
@@ -13,7 +15,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
-  padding: 50px 150px;
+  padding: 35px 150px 50px;
 }
 
 .card-castle {
@@ -36,23 +38,31 @@ body {
   }
 }
 
-.card-castle { transition: all .2s ease-in-out; }
-.card-castle:hover { transform: scale(1.05); }
-
-
 .castle-info {
   display: flex;
-  justify-content: space-between;
-  padding: 16px;
-}
-
-// .price {
-//   padding-top: 8px;
-// }
-
-.castle-info a {
+  justify-content: space-around;
+  margin-top: 16px;
+  padding-bottom: 12px;
+  a {
   color: black;
+  }
 }
+
+.price-card {
+  margin-top: 8px;
+}
+
+.money {
+  font-size: 18px;
+}
+
+.night {
+  text-align: right;
+  font-size: 14px;
+}
+
+.card-castle { transition: all .2s ease-in-out; }
+.card-castle:hover { transform: scale(1.05); }
 
 @media(max-width: 992px) {
   .grid-castles {
