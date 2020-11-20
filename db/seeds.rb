@@ -18,7 +18,7 @@ puts "created 2 users"
 chamborigaud = Castle.new(user: user1, name: "Chateau Chamborigaud", description: "Luxury ancient Disney-style castle
   in the Cevennes Mountains. Surrounded by 5 acres of land – this chateau mixes a modern style with fine
   medieval character to great effect. Wander through the manicured gardens and enjoy 7 course meals of the finest
-  French cuisine.", location: "Languedoc", price: 10000, sleeps: 50, bedrooms: 29, bathrooms: 35)
+  French cuisine.", location: "Chamborigaud, France", price: 10000, sleeps: 50, bedrooms: 29, bathrooms: 35)
 chamborigaud1 = URI.open('https://images.unsplash.com/photo-1526816229784-65d5d54ac8bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
 chamborigaud2 = URI.open("https://images.unsplash.com/photo-1549895058-36748fa6c6a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80")
 chamborigaud3 = URI.open("https://images.unsplash.com/photo-1605019104818-7d6ff0e18851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")

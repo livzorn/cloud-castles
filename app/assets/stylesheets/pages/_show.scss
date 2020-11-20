@@ -1,16 +1,15 @@
 .castles-container {
   width: 80vw;
-  padding: 24px;
+  padding: 16px;
   background-color: white;
   margin: 25px auto;
 }
 
 .carousel {
-  width: 38vw;
-  height: 50vh;
-  margin: 32px 16px;
+  width: 45%;
+  margin: 32px 0 32px 16px;
   img {
-    max-height: 50vh;
+    height: 50vh;
     width: 38vw;
     object-fit: cover;
   }
@@ -20,6 +19,7 @@
   width: 50%;
   text-align: center;
   position: relative;
+  margin: 0 0 16px 16px;
 }
 
 .location-rating {
@@ -41,7 +41,8 @@
 }
 
 .price {
-  margin: 16px auto 48px auto;
+  margin: 16px auto 32px auto;
+  font-size: 22px;
 }
 
 .btn-book {
