@@ -1,12 +1,17 @@
 class CastlesController < ApplicationController
   def index
-    @castles = Castle.all
+    if params[:query].present?
+      @castles = Castle.search_by_description_and_location(params[:query])
+    else
+      @castles = Castle.all
+    end
     @markers = @castles.geocoded.map do |castle|
       {
         lat: castle.latitude,
         lng: castle.longitude
       }
     end
+
   end
 
   def show

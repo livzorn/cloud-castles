@@ -1,4 +1,17 @@
 <h2 class="text-align-center">Browse castles near and far</h2>
+<div class="container mt-5 mb-2 ">
+  <div class="row justify-content-center">
+    <%= form_tag castles_path, method: :get, class: "form-inline" do %>
+      <div class="form-group mr-3">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a castle"%>
+      </div>
+      <%= submit_tag "Search", class: "btn btn-outline-danger" %>
+    <% end %>
+  </div>
+</div>
 <div class="grid-castles">
 
   <% @castles.where.not(:user_id => current_user.id).each do |castle| %>
