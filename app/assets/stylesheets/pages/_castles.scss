@@ -3,9 +3,11 @@ body {
   h2 {
   text-align: center;
   letter-spacing: 0.1em;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-weight: 300;
-  margin-top: 35px;
+  margin-top: 50px;
+  font-size: 26px;
+  transform: scale(1.1, 1);
   }
 }
 
@@ -13,7 +15,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
-  padding: 50px 150px;
+  padding: 35px 150px 50px;
 }
 
 .card-castle {
@@ -36,19 +38,23 @@ body {
   }
 }
 
+.night {
+  text-align: right;
+}
+
 .card-castle { transition: all .2s ease-in-out; }
 .card-castle:hover { transform: scale(1.05); }
 
 
 .castle-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 16px;
 }
 
-// .price {
-//   padding-top: 8px;
-// }
+.price p {
+  font-size: 18px;
+}
 
 .castle-info a {
   color: black;
