@@ -27,7 +27,7 @@
 
         <%= link_to "Edit", edit_castle_path(castle), class: "btn-edit"%>
         <%= link_to "Bookings", my_castle_bookings_castles_path(castle), class: "btn-bookings" %>
-        <%= link_to my_castles_castles_path, method: :delete, data: { confirm: "Are you sure?"} do %>
+        <%= link_to castle_path(castle.id), method: :delete, data: { confirm: "Are you sure?"} do %>
           <i class="fa fa-trash destroy_dose btn-delete" style="color:#C92661;"></i>
         <% end %>
 
