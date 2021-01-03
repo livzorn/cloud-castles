@@ -46,9 +46,6 @@ body {
   font-size: 14px;
 }
 
-.card-castle { transition: all .2s ease-in-out; }
-.card-castle:hover { transform: scale(1.05); }
-
 @media(max-width: 992px) {
   .grid-castles {
     grid-template-columns: 1fr 1fr;

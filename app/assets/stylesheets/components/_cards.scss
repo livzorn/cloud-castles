@@ -1,3 +1,5 @@
+// Basic card qualities
+
 .card {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
@@ -5,9 +7,11 @@
   position: relative;
 }
 
+// Card used for displaying castles in a grid on Explore Stays and My Castles pages
+
 .card-castle {
   line-height: 5px;
-  .castle-img {
+  img {
     max-width: 100%;
     object-fit: cover;
   }
@@ -21,13 +25,18 @@
   }
 }
 
+.card-castle { transition: all .2s ease-in-out; }
+.card-castle:hover { transform: scale(1.05); }
+
+// Card used on My Bookings page
+
 .card-horizontal {
   margin-top: 20px;
   width: 40vw;
   text-align: left;
   flex-direction: row;
   padding-right: 24px;
-  .castle-img {
+  img {
     max-width: 100%;
     object-fit: cover;
   }
@@ -35,7 +44,6 @@
     font-size: 20px;
     margin: 16px auto;
     font-family: 'Righteous', sans-serif;
-    // text-align: center;
   }
   p {
     font-size: 16px;
@@ -49,14 +57,3 @@
 
 .card-horizontal { transition: all .2s ease-in-out; }
 .card-horizontal:hover { transform: scale(1.05); }
-
-.card-category h1{
-  display: inline-block;
-  color: black;
-  border-radius: 50px;
-  margin-top: 20px;
-  font-family: Ribeye Marrow;
-
-}
-
-

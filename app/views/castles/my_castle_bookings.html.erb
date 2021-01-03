@@ -1,10 +1,15 @@
-<h2 class="text-align-center">Bookings for <%= @castle.name %> </h2>
+<div class="castle-bookings-container">
 
-<% @bookings.each do |booking| %>
-  <div class="card-castle-booking">
-    <p>Booked by: <%= booking.user.email %></p>
-    <p>Check-in: <%= booking.check_in_date %></p>
-    <p>Check-out: <%= booking.check_out_date %></p>
-  </div>
+  <%= cl_image_tag @castle.photos.first.key, crop: :fill, height: 300, width: 500 if @castle.photos.attached? %>
 
-<% end %>
+  <h2 class="text-align-center">Bookings for <%= @castle.name %> </h2>
+  <% @bookings.each do |booking| %>
+    <div class="card-castle-booking">
+      <p>Booked by: <%= booking.user.email %></p>
+      <p>Check-in: <%= booking.check_in_date %></p>
+      <p>Check-out: <%= booking.check_out_date %></p>
+    </div>
+
+  <% end %>
+
+</div>
