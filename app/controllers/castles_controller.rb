@@ -57,7 +57,7 @@ class CastlesController < ApplicationController
   def destroy
     @castle = Castle.find(params[:id])
     @castle.destroy
-    redirect_to castle_path(@castles)
+    redirect_to my_castles_castles_path
   end
 
   private
