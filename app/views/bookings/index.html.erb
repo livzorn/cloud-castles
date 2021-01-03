@@ -27,7 +27,7 @@
             <%= link_to(castle_path(booking.castle)) do %>
               <h3 id="castle-title-bookings"><%= link_to "#{booking.castle.name}", castle_path(booking.castle.id) %></h3>
             <% end %>
-            <div class="booking-info">
+            <div>
               <p class="mb-0"><i id="email" class="far fa-calendar-alt"></i> Check-in: <%= booking.check_in_date %> </p>
               <p><i id="email" class="far fa-calendar-alt"></i> Check-out: <%= booking.check_out_date %> </p>
               <p class="mb-0"> Host's contact details: </p>
@@ -71,7 +71,7 @@
                 <p><em>No bookings right now!</em></p>
               <% else %>
                 <% castle.bookings.each do |booking| %>
-                  <div class="booking-info">
+                  <div>
                     <p class="mb-0"><i id="email" class="far fa-calendar-alt"></i> Check-in: <%= booking.check_in_date %></p>
                     <p><i id="email" class="far fa-calendar-alt"></i> Check-out: <%= booking.check_out_date %></p>
                     <p class="mb-0">Guest's contact details:</p>

@@ -2,14 +2,32 @@
 
   <%= cl_image_tag @castle.photos.first.key, crop: :fill, height: 300, width: 500 if @castle.photos.attached? %>
 
-  <h2 class="text-align-center">Bookings for <%= @castle.name %> </h2>
-  <% @bookings.each do |booking| %>
-    <div class="card-castle-booking">
-      <p>Booked by: <%= booking.user.email %></p>
-      <p>Check-in: <%= booking.check_in_date %></p>
-      <p>Check-out: <%= booking.check_out_date %></p>
-    </div>
+  <div class="castle-bookings-info">
 
-  <% end %>
+    <h2 class="text-align-center"><%= @castle.name %></h2>
+    <h3>Current Bookings: <%= @castle.bookings.count %></h3>
+
+    <% if @castle.bookings.empty? %>
+
+      <p><em>No bookings right now!</em></p>
+
+    <% else %>
+
+      <div class="bookings-list">
+        <% @castle.bookings.each do |booking| %>
+
+          <div class="booking-info ml-4">
+            <p class="mb-0"><i id="email" class="far fa-calendar-alt"></i> Check-in: <%= booking.check_in_date %></p>
+            <p><i id="email" class="far fa-calendar-alt"></i> Check-out: <%= booking.check_out_date %></p>
+            <p class="mb-0">Guest's contact details:</p>
+            <p class="ml-3"><i id="email" class="far fa-envelope"></i> <%= booking.user.email %></p>
+          </div>
+
+        <% end %>
+      </div>
+
+    <% end %>
+
+  </div>
 
 </div>
