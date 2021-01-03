@@ -1,0 +1,37 @@
+.castle-bookings-container {
+  width: 80vw;
+  padding: 16px;
+  background-color: white;
+  margin: 50px auto;
+  display: flex;
+  text-align: center;
+  img {
+    height: 50vh;
+    width: 38vw;
+    object-fit: cover;
+    margin: 24px;
+  }
+}
+
+.castle-bookings-info {
+  width: 35vw;
+  h3 {
+    font-size: 22px;
+    font-family: "Work Sans";
+    text-align: center;
+  }
+}
+
+.booking-info {
+  border: 3px solid $lighter-blue;
+  border-radius: 10px;
+  padding: 16px 16px 4px 16px;
+  width: 250px;
+  text-align: left;
+  margin-top: 24px;
+}
+
+.bookings-list {
+  text-align: center;
+  margin-left: 100px;
+}

@@ -1,61 +1,91 @@
-<h2 class="text-align-center">My Upcoming Castle Commutes</h2>
 <div class="container-bookings">
-<!--    <div class="card-bookedcastle"> -->
-  <% if @bookings.empty? %>
-    <div class="empty-bookings">
-      <p> You have no current bookings!</p>
-    </div>
-  <% else %>
-    <% @bookings.each do |booking| %>
-      <div class="card-bookedcastle">
-        <div class="castle-img">
-          <%= cl_image_tag booking.castle.photos.first.key, crop: :fill, height: 240, width: 350 if booking.castle.photos.attached? %>
-        </div>
-        <h3 id="castle-title-bookings"><%= link_to "#{booking.castle.name}", castle_path(booking.castle.id) %> </h3>
-        <div class="dates">
-          <p> Check-in: <%= booking.check_in_date %> </p>
-          <p> Check-out: <%= booking.check_out_date %> </p>
-          <p> Booked for: <%= booking.user.email %> </p>
-        </div>
-        <%=link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="far fa-trash-alt"></i> </p>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
 
-<h2 class="text-center m-3 mt-3">My Castle Bookings </h2>
-<div class="container-bookings">
-   <!-- <div class="card-bookedcastle"> -->
-  <% if @castles.empty? %>
-    <div class="castle-info">
-      <p class="text-center py-3">You don't have any castles!</p>
-    </div>
-  <% else %>
-    <% @castles.each do |castle| %>
-      <div class="card-bookedcastle">
+  <!-- Right side -->
+
+  <div>
+    <h2>My Upcoming Trips</h2>
+
+    <% if @bookings.empty? %>
+
+      <div class="empty-bookings">
+        <p> You have no current bookings!</p>
+      </div>
+
+    <% else %>
+
+      <% @bookings.each do |booking| %>
+
+        <div class="card card-horizontal">
+
+          <div>
+            <%= link_to(castle_path(booking.castle)) do %>
+              <%= cl_image_tag booking.castle.photos.first.key, crop: :fill, height: 200, width: 250 if booking.castle.photos.attached? %>
+            <% end %>
+          </div>
+
+          <div class="ml-4 mt-2">
+            <%= link_to(castle_path(booking.castle)) do %>
+              <h3 id="castle-title-bookings"><%= link_to "#{booking.castle.name}", castle_path(booking.castle.id) %></h3>
+            <% end %>
+            <div>
+              <p class="mb-0"><i id="email" class="far fa-calendar-alt"></i> Check-in: <%= booking.check_in_date %> </p>
+              <p><i id="email" class="far fa-calendar-alt"></i> Check-out: <%= booking.check_out_date %> </p>
+              <p class="mb-0"> Host's contact details: </p>
+              <p class="ml-3"><i id="email" class="far fa-envelope"></i> <%= booking.castle.user.email %> </p>
+            </div>
+          </div>
+
+          <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+
+        </div>
+
+      <% end %>
+
+    <% end %>
+  </div>
+
+  <!-- Left side -->
+
+  <div class="ml-5">
+    <h2>Who's booked my castle?</h2>
+
+    <% if @castles.empty? %>
+
+      <div class="castle-info">
+        <p class="text-center mt-5">You don't have any castles!</p>
+      </div>
+
+    <% else %>
+
+      <% @castles.each do |castle| %>
         <%= link_to(castle_path(castle)) do %>
-          <div class="castle-img">
-            <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
+          <div class="card card-horizontal">
+
+            <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 200, width: 250 if castle.photos.attached? %>
+
+            <div class="ml-4 mt-2">
+              <h3><%= castle.name %></h3>
+              <% if castle.bookings.empty? %>
+                <p><em>No bookings right now!</em></p>
+              <% else %>
+                <% castle.bookings.each do |booking| %>
+                  <div>
+                    <p class="mb-0"><i id="email" class="far fa-calendar-alt"></i> Check-in: <%= booking.check_in_date %></p>
+                    <p><i id="email" class="far fa-calendar-alt"></i> Check-out: <%= booking.check_out_date %></p>
+                    <p class="mb-0">Guest's contact details:</p>
+                    <p class="ml-3"><i id="email" class="far fa-envelope"></i> <%= booking.user.email %></p>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+
           </div>
         <% end %>
-        <h3 id="brand-color" class="text-center mt-3" style="font-family: righteous;"> <%= castle.name %></h3>
-        <% if castle.bookings.empty? %>
-          <p class="text-center py-3 my-booking"><em>Seems like no one is interested in this castle: you have 0 bookings😢</em></p>
-        <% else %>
-          <div class="container">
-            <% castle.bookings.each do |booking| %>
-              <div class="my-booking">
-                 <p> Your castle has been booked by:</p>
-                 <p><i id="email" class="far fa-envelope"></i> <%= booking.user.email %></p>
-                 <p><i id="email" class="far fa-calendar-alt"></i> <%= booking.check_in_date %> -</p>
-                 <p><i id="email" class="far fa-calendar-alt"></i> <%= booking.check_out_date %> </p>
-              </div>
-            <%end%>
-          </div>
-        <%end%>
-      </div>
+      <% end %>
+
     <% end %>
-  <% end %>
+  </div>
+
 </div>

@@ -1,9 +1,10 @@
 <h2 class="text-align-center">Your castles</h2>
+
 <div class="grid-castles my-castles-container">
 
   <% @castles.where(:user_id => current_user.id).each do |castle| %>
 
-      <div class="card-castle">
+      <div class="card card-castle">
         <%= link_to(castle_path(castle)) do %>
 
           <div class="castle-img">

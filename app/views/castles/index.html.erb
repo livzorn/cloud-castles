@@ -1,4 +1,5 @@
 <h2 class="text-align-center">Browse castles near and far</h2>
+
 <div class="container mt-4 mb-3 ">
   <div class="row justify-content-center">
     <%= form_tag castles_path, method: :get, class: "form-inline" do %>
@@ -12,12 +13,13 @@
     <% end %>
   </div>
 </div>
+
 <div class="grid-castles">
 
   <% @castles.where.not(:user_id => current_user.id).each do |castle| %>
     <%= link_to(castle_path(castle)) do %>
 
-      <div class="card-castle">
+      <div class="card card-castle">
 
         <div class="castle-img">
           <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 240, width: 350 if castle.photos.attached? %>
@@ -44,7 +46,6 @@
      style="width: 110%; height: 320px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-
 </div>
 
 

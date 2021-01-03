@@ -1,109 +1,18 @@
-.bookingbutton {
-  display: inline-block;
-  background-color: white;
-  margin-left: 590px;
-  margin-top: 380px;
-  padding: 16px 36px;
-  border-radius: 50px;
-  color: black;
-  text-decoration: underline;
-  font-family: Righteous;
-  position: absolute;
-
-}
-
-.bookbutton {
-  display: inline-block;
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 50px;
-  margin-top: 20px;
-  color: black;
-  text-decoration: underline;
-  font-family: Righteous;
-  position: absolute;
-  border-style: none;
-}
-.card-category h1{
-  display: inline-block;
-  color: black;
-  border-radius: 50px;
-  margin-top: 20px;
-  font-family: Ribeye Marrow;
-
-}
 .container-bookings {
-
-  text-align: center;
-  width: 40vw;
-  background-color:$lighter-blue;
-  margin: 35px auto;
-
-  // box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  h3 {
-    font-family: Righteous;
-    margin-bottom: 16px;
-  }
-  p {
-    font-size: 20px;
-    font-family: "Work Sans";
+  display: flex;
+  justify-content: center;
+  h2 {
+    text-align: center;
   }
   a {
     color: black;
   }
-}
-
-.card-bookedcastle{
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 16px;
-  line-height: 30px;
-  margin: 0px 0px 0px 0px;
-  margin-top:20px;
-  border-radius: 10px;
-  position: relative;
-  padding: 30px,30px,30px;
-  h3 {
-    font-size: 20px;
-    font-family: 'Righteous', sans-serif;
-    color: black;
-  }
-  p {
-    color: black;
-  }
-
-#castle-title-bookings {
-  color: black;
-}
-
-.card-bookedcastle { transition: all .2s ease-in-out; }
-.card-bookedcastle:hover { transform: scale(1.05); }
-
-  .castle-img {
-    margin-top: 10px;
-    max-width: 100%;
-    object-fit: cover;
-    padding:25px 25px 25px;
-  }
-}
-
-.dates p {
-  font-size: 18px;
-  margin: 0 auto;
+  margin-bottom: 60px;
 }
 
 .fa-trash-alt {
   color: #C92661;
-  size: 400px ;
-  margin: 16px auto 24px;
-  margin-right: 5px;
-  padding-right: 20px;
+  position: absolute;
+  top: 28px;
+  right: 32px;
 }
-
-.my-booking {
-  padding: 16px;
-  padding-bottom: 32px;
-  p {
-  margin: 0 auto;
-  }
-}
-
