@@ -29,27 +29,10 @@
   left: 32px;
 }
 
-.btn-delete-castle {
-  color: $main-pink;
-  font-family: 'Righteous', sans-serif;
-  position: right;
-  bottom: 16px;
-  left: 32px;
-}
-
 .btn-delete {
   position: absolute;
   bottom: 20px;
   right: 32px;
-}
-
-.btn-book {
-  background-color: $main-pink;
-  color: white;
-  font-family: 'Righteous', sans-serif;
-  padding: 15px 25px;
-  border-radius: 40px;
-  margin-top: 50px;
 }
 
 .btn-back {
@@ -62,45 +45,4 @@
 
 .buttons {
   margin: 32px;
-}
-
-.btn-book:hover {
-  transition-property: padding;
-  transition-duration: 0.3s;
-  padding: 18px 28px;
-  color: white;
-}
-
-.btn-book:hover {
-  transition-property: font-size;
-  transition-duration: 0.3s;
-  font-size: 15px;
-  color: $main-pink;
-}
-
-.bookingbutton {
-  display: inline-block;
-  background-color: white;
-  margin-left: 590px;
-  margin-top: 380px;
-  padding: 16px 36px;
-  border-radius: 50px;
-  color: black;
-  text-decoration: underline;
-  font-family: Righteous;
-  position: absolute;
-
-}
-
-.bookbutton {
-  display: inline-block;
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 50px;
-  margin-top: 20px;
-  color: black;
-  text-decoration: underline;
-  font-family: Righteous;
-  position: absolute;
-  border-style: none;
 }
