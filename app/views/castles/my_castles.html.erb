@@ -3,7 +3,7 @@
 
   <% @castles.where(:user_id => current_user.id).each do |castle| %>
 
-      <div class="card-castle">
+      <div class="card card-castle">
         <%= link_to(castle_path(castle)) do %>
 
           <div class="castle-img">

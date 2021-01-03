@@ -1,9 +1,12 @@
-.card-castle {
+.card {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  line-height: 5px;
   border-radius: 10px;
   position: relative;
+}
+
+.card-castle {
+  line-height: 5px;
   .castle-img {
     max-width: 100%;
     object-fit: cover;
@@ -17,3 +20,43 @@
     color: black;
   }
 }
+
+.card-horizontal {
+  margin-top: 20px;
+  width: 40vw;
+  text-align: left;
+  flex-direction: row;
+  padding-right: 24px;
+  .castle-img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+  h3 {
+    font-size: 20px;
+    margin: 16px auto;
+    font-family: 'Righteous', sans-serif;
+    // text-align: center;
+  }
+  p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    padding-left: 16px;
+  }
+  a {
+    color: black;
+  }
+}
+
+.card-horizontal { transition: all .2s ease-in-out; }
+.card-horizontal:hover { transform: scale(1.05); }
+
+.card-category h1{
+  display: inline-block;
+  color: black;
+  border-radius: 50px;
+  margin-top: 20px;
+  font-family: Ribeye Marrow;
+
+}
+
+
