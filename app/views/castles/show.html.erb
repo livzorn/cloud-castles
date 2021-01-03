@@ -1,5 +1,7 @@
 <div class="d-flex castles-container">
 
+  <!-- Bootstrap Image Carousel -->
+
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <% @castle.photos.size.times do |i| %>
@@ -23,23 +25,33 @@
     </a>
   </div>
 
+  <!-- Right Side Info  -->
+
   <div class="castle_text">
+
     <h2><%= @castle.name %></h2>
+
     <div class="d-flex location-rating">
       <p><%= @castle.location %></p>
       <p>★★★★★</p>
     </div>
+
     <div class="d-flex rooms">
       <p>Sleeps: <%= @castle.sleeps %></p>
       <p>Bedrooms: <%= @castle.bedrooms %></p>
       <p>Bathrooms: <%= @castle.bathrooms %></p>
     </div>
+
     <p class="description"><%= @castle.description %></p>
+
     <h4 class="price">€<%= @castle.price %>/night</h4>
+
     <div class="buttons">
       <%= link_to "Book Your Stay", new_castle_booking_path(@castle), class: "btn-pink"%>
       <br>
       <%= link_to "back", castles_path, class: "btn-back" %>
     </div>
+
   </div>
+
 </div>
