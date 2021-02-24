@@ -69,7 +69,7 @@ class CastlesController < ApplicationController
   end
 
   def filter_by_user
-    return searched_castles.where.not(user_id: current_user.id) if user_signed_in?
+    return Castle.where.not(user_id: current_user.id) if user_signed_in?
 
     return Castle.all
   end
