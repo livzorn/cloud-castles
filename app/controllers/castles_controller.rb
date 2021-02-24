@@ -46,11 +46,8 @@ class CastlesController < ApplicationController
   end
 
   def update
-    if @castle.update(castle_params)
-      redirect_to castle_path(@castle)
-    else
-      render 'edit'
-    end
+    @castle.update(castle_params)
+    redirect_to castle_path(@castle)
   end
 
   def destroy
