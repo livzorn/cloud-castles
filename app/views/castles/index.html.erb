@@ -16,7 +16,7 @@
 
 <div class="grid-castles">
 
-  <% @castles.where.not(:user_id => current_user.id).each do |castle| %>
+  <% @castles.each do |castle| %>
     <%= link_to(castle_path(castle)) do %>
 
       <div class="card card-castle">

@@ -1,21 +1,23 @@
 class CastlesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_castle, only: [:show, :edit, :update, :destroy, :my_castle_bookings]
+
   def index
-    if params[:query].present?
-      @castles = Castle.search_by_description_and_location(params[:query])
-    else
-      @castles = Castle.all
-    end
+    # filter out the castles owned by the current user
+    bookable_castles = filter_by_user
+    # search through the castles if a query is present
+    @castles = search_castles(bookable_castles)
+
+    # add markers to the map for all the castles shown
     @markers = @castles.geocoded.map do |castle|
       {
         lat: castle.latitude,
         lng: castle.longitude
       }
     end
-
   end
 
   def show
-    @castle = Castle.find(params[:id])
   end
 
   def new
@@ -33,20 +35,17 @@ class CastlesController < ApplicationController
   end
 
   def my_castles
-    @castles = Castle.where(:user_id => current_user.id)
+    @castles = Castle.where(user_id: current_user.id)
   end
 
   def my_castle_bookings
-    @castle = Castle.find(params[:id])
     @bookings = @castle.bookings
   end
 
   def edit
-    @castle = Castle.find(params[:id])
   end
 
   def update
-    @castle = Castle.find(params[:id])
     if @castle.update(castle_params)
       redirect_to castle_path(@castle)
     else
@@ -55,14 +54,29 @@ class CastlesController < ApplicationController
   end
 
   def destroy
-    @castle = Castle.find(params[:id])
     @castle.destroy
     redirect_to my_castles_castles_path
   end
 
   private
 
+  def find_castle
+    @castle = Castle.find(params[:id])
+  end
+
   def castle_params
     params.require(:castle).permit(:name, :description, :location, :price, :sleeps, :bedrooms, :bathrooms, photos: [])
+  end
+
+  def filter_by_user
+    return searched_castles.where.not(user_id: current_user.id) if user_signed_in?
+
+    return Castle.all
+  end
+
+  def search_castles(castles)
+    return Castle.search_by_description_and_location(params[:query]) if params[:query].present?
+
+    return castles
   end
 end
