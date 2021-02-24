@@ -47,11 +47,10 @@
     <h4 class="price">€<%= @castle.price %>/night</h4>
 
     <div class="buttons">
-      <%= link_to "Book Your Stay", new_castle_booking_path(@castle), class: "btn-pink"%>
-      <br>
       <% if @castle.user == current_user %>
         <%= link_to "back", my_castles_castles_path, class: "btn-back" %>
       <% else %>
+        <%= link_to "Book Your Stay", new_castle_booking_path(@castle), class: "btn-pink"%>
         <%= link_to "back", castles_path, class: "btn-back" %>
       <% end %>
     </div>
