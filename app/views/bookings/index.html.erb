@@ -60,7 +60,7 @@
     <% else %>
 
       <% @castles.each do |castle| %>
-        <%= link_to(castle_path(castle)) do %>
+        <%= link_to(my_castle_bookings_castles_path(castle)) do %>
           <div class="card card-horizontal">
 
             <%= cl_image_tag castle.photos.first.key, crop: :fill, height: 200, width: 250 if castle.photos.attached? %>
@@ -70,14 +70,8 @@
               <% if castle.bookings.empty? %>
                 <p><em>No bookings right now!</em></p>
               <% else %>
-                <% castle.bookings.each do |booking| %>
-                  <div>
-                    <p class="mb-0"><i id="email" class="far fa-calendar-alt"></i> Check-in: <%= booking.check_in_date %></p>
-                    <p><i id="email" class="far fa-calendar-alt"></i> Check-out: <%= booking.check_out_date %></p>
-                    <p class="mb-0">Guest's contact details:</p>
-                    <p class="ml-3"><i id="email" class="far fa-envelope"></i> <%= booking.user.email %></p>
-                  </div>
-                <% end %>
+                <p>Number of current bookings:</p>
+                <p class="bookings-count"><%= castle.bookings.count %></p>
               <% end %>
             </div>
 
