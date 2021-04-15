@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
   devise_for :users
   root to: 'pages#home'
 
@@ -9,7 +10,9 @@ Rails.application.routes.draw do
       get ":id/my_castle_bookings/", to: "castles#my_castle_bookings", as: "my_castle_bookings"
     end
     resources :bookings, only: [ :new,  :create ]
+    resources :reviews, only: [ :new, :create ]
   end
 
   resources :bookings, only: [ :index, :edit, :destroy ]
+  resources :reviews, only: [ :edit, :update, :destroy ]
 end

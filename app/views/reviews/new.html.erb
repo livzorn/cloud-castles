@@ -1,0 +1,29 @@
+<div class="container-devise-form">
+  <h2 >Leave a review for <%= @castle.name %></h2>
+
+  <div class="add_castle">
+    <div class="container">
+      <div class="form-inputs">
+
+        <%= simple_form_for [@castle, @review] do |f| %>
+
+          <div class="form-inputs">
+            <%= f.input :rating, label: "How much did you enjoy the castle on a scale of 1 to 5?" %>
+            <%= f.input :content, label: "Content" %>
+          </div>
+
+          <div class="form-actions">
+            <div class="book">
+              <%= f.submit  "Submit", class: "btn-pink"%>
+            </div>
+          </div>
+
+        <% end %>
+
+      </div>
+    </div>
+
+    <%= link_to 'back', root_path, class: "btn-back" %>
+
+  </div>
+</div>

@@ -39,6 +39,9 @@
             <i class="far fa-trash-alt"></i>
           <% end %>
 
+          <% unless booking.reviewed %>
+            <%= link_to "Leave a review", new_castle_review_path(booking.castle, booking_id: booking.id)  %>
+          <% end %>
         </div>
 
       <% end %>
